@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import useProducts from "../../Hooks/useProducts";
+import Slider from "./Slider";
 
 const ProductsView = () => {
   const [zoom, setZoom] = useState(false);
@@ -8,88 +9,34 @@ const ProductsView = () => {
   const [products] = useProducts();
   const productData = products.find((product) => product.id === id);
 
-  const handleZoom = (value) => {
-    setZoom(zoom === value ? value : value);
-  };
   return (
     <div className="mb-28 font-medium">
       <div className="flex gap-5">
         <div className="w-6/12">
-          <img
-            onClick={() => handleZoom(2)}
-            src={productData?.img2}
-            className="cursor-crosshair"
-            alt=""
-          />
-          {zoom === 2 && (
-            <img
-              onClick={() => handleZoom(false)}
-              src={productData?.img2}
-              className="cursor-crosshair absolute top-24 -left-32"
-              alt=""
-            />
-          )}
-          <img
-            onClick={() => handleZoom(3)}
-            src={productData?.img3}
-            className="cursor-crosshair"
-            alt=""
-          />
-          {zoom === 3 && (
-            <img
-              onClick={() => handleZoom(false)}
-              src={productData?.img3}
-              className="cursor-crosshair absolute top-24 -left-32"
-              alt=""
-            />
-          )}
+          <img src={productData?.img2} className="cursor-crosshair" alt="" />
+          <img src={productData?.img3} className="cursor-crosshair" alt="" />
         </div>
         <div className="w-full">
           <img
-            onClick={() => handleZoom(1)}
+            onClick={() => setZoom(true)}
             src={productData?.img}
             className="cursor-crosshair"
             alt=""
           />
-          {zoom === 1 && (
-            <img
-              onClick={() => handleZoom(false)}
-              src={productData?.img}
-              className="cursor-crosshair absolute top-24 -left-32"
-              alt=""
-            />
-          )}
           <div className="flex justify-center gap-6 mt-6">
             <img
-              onClick={() => handleZoom(4)}
               src="https://cdn.shopify.com/s/files/1/0411/9864/9508/products/alabama-chanin--fabric-swatch--georgia--applique-stenciled-embroidery--concrete.jpg?v=1663867325"
               className="w-1/2 cursor-crosshair"
               alt=""
             />
-            {zoom === 4 && (
-              <img
-                onClick={() => handleZoom(false)}
-                src="https://cdn.shopify.com/s/files/1/0411/9864/9508/products/alabama-chanin--fabric-swatch--georgia--applique-stenciled-embroidery--concrete.jpg?v=1663867325"
-                className="cursor-crosshair absolute top-24 -left-32"
-                alt=""
-              />
-            )}
             <img
-              onClick={() => handleZoom(5)}
               src="https://cdn.shopify.com/s/files/1/0411/9864/9508/products/alabama-chanin--fabric-swatch--georgia--applique-stenciled-embroidery--wax.jpg?v=1663867329"
               alt=""
               className="w-1/2 cursor-crosshair"
             />
-            {zoom === 5 && (
-              <img
-                onClick={() => handleZoom(false)}
-                src="https://cdn.shopify.com/s/files/1/0411/9864/9508/products/alabama-chanin--fabric-swatch--georgia--applique-stenciled-embroidery--wax.jpg?v=1663867329"
-                className="cursor-crosshair absolute top-24 -left-32"
-                alt=""
-              />
-            )}
           </div>
         </div>
+        {zoom ? <Slider setZoom={setZoom} productData={productData} /> : null}
         <div className="w-7/12">
           <div className="border-t py-3">
             <h1 className="text-xs">{productData?.name}</h1>
