@@ -1,0 +1,59 @@
+[
+  {
+    "id": "1",
+    "name": "The Aster Trench",
+    "img": "https://cdn.shopify.com/s/files/1/0411/9864/9508/products/alabama-chanin--aster-trench-coat--georgia--applique--styled--black.jpg?v=1663867308",
+    "img2": "https://cdn.shopify.com/s/files/1/0411/9864/9508/products/alabama-chanin--aster-trench-coat--georgia--applique--black.jpg?v=1663867310",
+    "img3": "https://cdn.shopify.com/s/files/1/0411/9864/9508/products/alabama-chanin--aster-trench-coat--georgia--applique--styled--black--adrienne-pant.jpg?v=1663867319",
+    "price": "6998"
+  },
+  {
+    "id": "2",
+    "name": "The Gia Top",
+    "img": "https://cdn.shopify.com/s/files/1/0411/9864/9508/products/alabama-chanin--the-lola-top--gia--georgia-stencil-applique--black.jpg?v=1663871762",
+    "img2": "https://cdn.shopify.com/s/files/1/0411/9864/9508/products/alabama-chanin--aster-trench-coat--georgia--applique--black.jpg?v=1663867310",
+    "img3": "https://cdn.shopify.com/s/files/1/0411/9864/9508/products/alabama-chanin--aster-trench-coat--georgia--applique--styled--black--adrienne-pant.jpg?v=1663867319",
+    "price": "6998"
+  },
+  {
+    "id": "3",
+    "name": "The Maxine Skirt",
+    "img": "https://cdn.shopify.com/s/files/1/0411/9864/9508/products/alabama-chanin--fabric-swatch--applique-stenciled-embroidery--detail--black--horizontal.jpg?v=1663872348",
+    "price": "6998",
+    "img2": "https://cdn.shopify.com/s/files/1/0411/9864/9508/products/alabama-chanin--aster-trench-coat--georgia--applique--black.jpg?v=1663867310",
+    "img3": "https://cdn.shopify.com/s/files/1/0411/9864/9508/products/alabama-chanin--aster-trench-coat--georgia--applique--styled--black--adrienne-pant.jpg?v=1663867319",
+    "big": "yes"
+  },
+  {
+    "id": "4",
+    "name": "The Carson Waffle Top",
+    "img": "https://cdn.shopify.com/s/files/1/0411/9864/9508/products/alabama-chanin--carson-top--mock-neck-waffle-top--basic--concrete.jpg?v=1663872638",
+    "img2": "https://cdn.shopify.com/s/files/1/0411/9864/9508/products/alabama-chanin--aster-trench-coat--georgia--applique--black.jpg?v=1663867310",
+    "img3": "https://cdn.shopify.com/s/files/1/0411/9864/9508/products/alabama-chanin--aster-trench-coat--georgia--applique--styled--black--adrienne-pant.jpg?v=1663867319",
+    "price": "6998"
+  },
+  {
+    "id": "5",
+    "name": "The Georgia Coat",
+    "img": "https://cdn.shopify.com/s/files/1/0411/9864/9508/products/alabama-chanin--georgia-fringed-coat--basic--organic-cotton--black.jpg?v=1663619022",
+    "img2": "https://cdn.shopify.com/s/files/1/0411/9864/9508/products/alabama-chanin--aster-trench-coat--georgia--applique--black.jpg?v=1663867310",
+    "img3": "https://cdn.shopify.com/s/files/1/0411/9864/9508/products/alabama-chanin--aster-trench-coat--georgia--applique--styled--black--adrienne-pant.jpg?v=1663867319",
+    "price": "6998"
+  },
+  {
+    "id": "6",
+    "name": "The Bailey Dress",
+    "img": "https://cdn.shopify.com/s/files/1/0411/9864/9508/products/alabama-chanin--bailey-dress--swing-dress--waffle-lwj--georgia-painted--black.jpg?v=1663873607",
+    "img2": "https://cdn.shopify.com/s/files/1/0411/9864/9508/products/alabama-chanin--aster-trench-coat--georgia--applique--black.jpg?v=1663867310",
+    "img3": "https://cdn.shopify.com/s/files/1/0411/9864/9508/products/alabama-chanin--aster-trench-coat--georgia--applique--styled--black--adrienne-pant.jpg?v=1663867319",
+    "price": "6998"
+  },
+  {
+    "id": "7",
+    "name": "The Mira Top",
+    "img": "https://cdn.shopify.com/s/files/1/0411/9864/9508/products/alabama-chanin--the-waffle-yoke-top--mira--basic--black_79d044a1-fb26-4a82-9879-1c9fe5900f4f.jpg?v=1663077298",
+    "img2": "https://cdn.shopify.com/s/files/1/0411/9864/9508/products/alabama-chanin--aster-trench-coat--georgia--applique--black.jpg?v=1663867310",
+    "img3": "https://cdn.shopify.com/s/files/1/0411/9864/9508/products/alabama-chanin--aster-trench-coat--georgia--applique--styled--black--adrienne-pant.jpg?v=1663867319",
+    "price": "6998"
+  }
+]
