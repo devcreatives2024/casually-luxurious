@@ -5,20 +5,38 @@ import Slider from "./Slider";
 
 const ProductsView = () => {
   const [zoom, setZoom] = useState(false);
+  const [tabs, setTabs] = useState(1);
   const { id } = useParams();
   const [products] = useProducts();
   const productData = products.find((product) => product.id === id);
 
+  const handleZoom = (value) => {
+    setZoom(zoom === value ? value : value);
+  };
+  const handleTabs = (value) => {
+    setTabs(tabs === value ? value : value);
+  };
+
   return (
-    <div className="mb-28 font-medium">
-      <div className="flex gap-5">
+    <div className="font-medium">
+      <div className="flex gap-5 mb-16">
         <div className="w-6/12">
-          <img src={productData?.img2} className="cursor-crosshair" alt="" />
-          <img src={productData?.img3} className="cursor-crosshair" alt="" />
+          <img
+            onClick={() => handleZoom(2)}
+            src={productData?.img2}
+            className="cursor-crosshair"
+            alt=""
+          />
+          <img
+            onClick={() => handleZoom(3)}
+            src={productData?.img3}
+            className="cursor-crosshair"
+            alt=""
+          />
         </div>
         <div className="w-full">
           <img
-            onClick={() => setZoom(true)}
+            onClick={() => handleZoom(1)}
             src={productData?.img}
             className="cursor-crosshair"
             alt=""
@@ -36,7 +54,14 @@ const ProductsView = () => {
             />
           </div>
         </div>
-        {zoom ? <Slider setZoom={setZoom} productData={productData} /> : null}
+        {zoom ? (
+          <Slider
+            setZoom={setZoom}
+            handleZoom={handleZoom}
+            zoom={zoom}
+            productData={productData}
+          />
+        ) : null}
         <div className="w-7/12">
           <div className="border-t py-3">
             <h1 className="text-xs">{productData?.name}</h1>
@@ -100,6 +125,110 @@ const ProductsView = () => {
             >
               SHARE +
             </a>
+          </div>
+        </div>
+      </div>
+      {/* Tabs  */}
+      <div>
+        <ul className="flex justify-center gap-4 text-[10.5px] uppercase">
+          <li>
+            <a
+              className={`cursor-pointer ${tabs === 1 && "underline"}`}
+              onClick={() => handleTabs(1)}
+            >
+              Releted Products
+            </a>
+          </li>
+          <li>
+            <a
+              className={`cursor-pointer ${tabs === 2 && "underline"}`}
+              onClick={() => handleTabs(2)}
+            >
+              Recent Products
+            </a>
+          </li>
+          <li>
+            <a
+              className={`cursor-pointer ${tabs === 3 && "underline"}`}
+              onClick={() => handleTabs(3)}
+            >
+              More In This Material
+            </a>
+          </li>
+        </ul>
+        {/* slider  */}
+        <div className="h-80 flex">
+          <div
+            className={`absolute flex gap-5 duration-300 justify-center mt-5 ${
+              (tabs === 1 && "left-[50%] translate-x-[-50%]") ||
+              (tabs === 2 && "left-[4.5%]") ||
+              (tabs === 3 && "left-[-26.5%]")
+            }`}
+          >
+            {products?.slice(0, 2).map((product) => (
+              <>
+                <div>
+                  <div
+                    className={`h-full w-full bg-white bg-opacity-30 absolute top-0 left-0 ${
+                      tabs === 1 && "hidden"
+                    }`}
+                  ></div>
+                  <img src={product?.img} className="w-40" alt="" />
+                  <p className="text-xs pt-4 font-medium">{product?.name}</p>
+                  <p className="text-[10.5px] pt-1 font-medium">
+                    ${product?.price}.00
+                  </p>
+                </div>
+              </>
+            ))}
+          </div>
+          <div
+            className={`absolute flex gap-5 duration-300 justify-center mt-5 ${
+              (tabs === 1 && "right-[4.5%]") ||
+              (tabs === 2 && "left-[50%] translate-x-[-50%]") ||
+              (tabs === 3 && "left-[4.5%]")
+            }`}
+          >
+            {products?.slice(2, 4).map((product) => (
+              <>
+                <div>
+                  <div
+                    className={`h-full w-full bg-white bg-opacity-30 absolute top-0 left-0 ${
+                      tabs === 2 && "hidden"
+                    }`}
+                  ></div>
+                  <img src={product?.img} className="w-40" alt="" />
+                  <p className="text-xs pt-4 font-medium">{product?.name}</p>
+                  <p className="text-[10.5px] pt-1 font-medium">
+                    ${product?.price}.00
+                  </p>
+                </div>
+              </>
+            ))}
+          </div>
+          <div
+            className={`absolute flex gap-5 duration-300 justify-center mt-5 ${
+              (tabs === 1 && "right-[-26.5%]") ||
+              (tabs === 2 && "right-[4.5%]") ||
+              (tabs === 3 && "left-[50%] translate-x-[-50%]")
+            }`}
+          >
+            {products?.slice(4, 6).map((product) => (
+              <>
+                <div>
+                  <div
+                    className={`h-full w-full bg-white bg-opacity-30 absolute top-0 left-0 ${
+                      tabs === 3 && "hidden"
+                    }`}
+                  ></div>
+                  <img src={product?.img} className="w-40" alt="" />
+                  <p className="text-xs pt-4 font-medium">{product?.name}</p>
+                  <p className="text-[10.5px] pt-1 font-medium">
+                    ${product?.price}.00
+                  </p>
+                </div>
+              </>
+            ))}
           </div>
         </div>
       </div>

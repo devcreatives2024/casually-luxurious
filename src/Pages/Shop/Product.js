@@ -13,7 +13,13 @@ const Product = ({ product }) => {
         onMouseLeave={() => setHover(false)}
         className="relative h-[50vh] cursor-pointer"
       >
-        <img src={product?.img} className="w-full h-[50vh]" alt="" />
+        <img
+          src={`${
+            product?.big === "yes" ? `${product.img3}` : `${product.img}`
+          }`}
+          className="w-full h-[50vh]"
+          alt=""
+        />
         <div
           className={`bg-[#EBEBEB] p-6 w-full transition-all
            ease-in-out duration-500 uppercase text-sm absolute  ${

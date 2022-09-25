@@ -6,7 +6,7 @@ import Product from "./Product";
 const Proudcts = () => {
   const [products] = useProducts();
   return (
-    <div>
+    <div className="pt-8">
       <div className="flex">
         <div>
           <h5 className="text-[9.5px] uppercase">Filter</h5>
