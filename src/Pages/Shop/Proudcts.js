@@ -1,13 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import useProducts from "../../Hooks/useProducts";
 import Product from "./Product";
 
 const Proudcts = () => {
+  const [load, setLoad] = useState(false);
   const [products] = useProducts();
   return (
-    <div className="pt-8">
-      <div className="flex">
+    <div className="lg:pt-8">
+      <div className="lg:flex hidden">
         <div>
           <h5 className="text-[9.5px] uppercase">Filter</h5>
         </div>
@@ -41,10 +42,27 @@ const Proudcts = () => {
         </div>
       </div>
       {/* products  */}
-      <div className="grid gap-6 mt-5 grid-cols-4">
-        {products?.map((product) => (
-          <Product key={product?.id} product={product} />
-        ))}
+      <div className={`${load ? "hidden" : ""}`}>
+        <div className="grid gap-6 mt-5 col-span-2 lg:grid-cols-4">
+          {products?.slice(0, 7).map((product) => (
+            <Product key={product?.id} product={product} />
+          ))}
+        </div>
+        <div className="w-full text-center">
+          <button
+            onClick={() => setLoad(true)}
+            className="mt-5 bg-[#EBEBEB] px-28 rounded-md py-2"
+          >
+            Load More
+          </button>
+        </div>
+      </div>
+      <div className={`${load ? "" : "hidden"}`}>
+        <div className="grid gap-6 mt-5 col-span-2 lg:grid-cols-4">
+          {products?.map((product) => (
+            <Product key={product?.id} product={product} />
+          ))}
+        </div>
       </div>
     </div>
   );

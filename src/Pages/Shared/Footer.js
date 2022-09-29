@@ -6,13 +6,13 @@ const Footer = () => {
     <div className="w-full mt-8 border-t border-[#EBEBEB] px-8">
       <a
         href="#"
-        className=" flex items-center justify-end gap-1 text-[9.5px] font-medium uppercase py-6 text-right"
+        className="flex items-center justify-end gap-1 text-[9.5px] font-medium uppercase py-6 text-right"
       >
         BACK TO TOP <BsArrowUp className="text-sm" />
       </a>
-      <div className="flex justify-between py-11">
+      <div className="flex lg:flex-row flex-col justify-between py-11">
         <div className="w-full">
-          <div className="border-b border-gray-300 text-gray-500 flex justify-between w-7/12 pb-1">
+          <div className="border-b border-gray-300 text-gray-500 flex justify-between lg:w-7/12 pb-1">
             <input
               type="text"
               placeholder="YOUR EMAIL"
@@ -22,23 +22,23 @@ const Footer = () => {
           </div>
         </div>
         <div className="w-full">
-          <ul className="flex justify-end text-[10.5px] font-medium uppercase">
-            <li className="pr-3">
+          <ul className="flex lg:flex-row flex-col gap-4 mt-10 lg:mt-0 text-center lg:text-left lg:justify-end text-[10.5px] font-medium uppercase">
+            <li>
               <a href="#">Contact</a>
             </li>
-            <li className="px-3">
+            <li>
               <a href="#">Legal</a>
             </li>
-            <li className="px-3">
+            <li>
               <a href="#">Press</a>
             </li>
-            <li className="px-3">
+            <li>
               <a href="#">Journal</a>
             </li>
-            <li className="px-3">
+            <li>
               <a href="#">Site Map</a>
             </li>
-            <li className="px-3">
+            <li>
               <a href="#">Social</a>
             </li>
           </ul>
